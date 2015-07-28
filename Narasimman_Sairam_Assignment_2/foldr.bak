@@ -1,0 +1,8 @@
+#lang scheme
+
+(define (foldright func end lst)
+  (if (null? lst)
+      end
+      (func (car lst) (foldright func end (cdr lst)))))
+
+(foldright + 2 '(1 2 3))
